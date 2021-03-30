@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace="io.github.kjarosh.javacon.testcontainers.service.database.mappers.EventLogMapper">
+    <insert id="insertLog" parameterType="io.github.kjarosh.javacon.testcontainers.service.database.dto.EventLogDto">
+        insert into event_log (
+            id,
+            type,
+            time,
+            content
+        )
+        values (
+            #{id},
+            #{type},
+            #{time},
+            #{content}
+        )
+    </insert>
+
+    <select id="getLogs" resultType="io.github.kjarosh.javacon.testcontainers.service.database.dto.EventLogDto">
+        select id, type, time, content from event_log
+    </select>
+</mapper>
