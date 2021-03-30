@@ -30,7 +30,7 @@ public class ITSeleniumDuckDuckGo {
                     VncRecordingFormat.FLV);
 
     @Test
-    public void testGoogleSearch() {
+    public void testDuckDuckGoSearch() {
         WebDriver driver = chrome.getWebDriver();
 
         driver.get("https://duckduckgo.com/");

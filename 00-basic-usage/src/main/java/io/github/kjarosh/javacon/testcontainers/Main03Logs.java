@@ -11,10 +11,12 @@ import java.time.Duration;
  */
 @Slf4j(topic = "main")
 public class Main03Logs {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         GenericContainer<?> container = new GenericContainer<>("redis:6.2.1")
                 .withLogConsumer(new Slf4jLogConsumer(log)
                         .withPrefix("redis"));
         container.start();
+
+        Thread.sleep(Duration.ofMinutes(5).toMillis());
     }
 }
